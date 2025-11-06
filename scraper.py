@@ -1,4 +1,5 @@
 import time
+import requests
 from typing import List, Dict
 
 def scrape_ai_jobs(search_term: str = "artificial intelligence", limit: int = 10) -> List[Dict]:
