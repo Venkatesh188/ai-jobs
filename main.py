@@ -178,6 +178,10 @@ class ScraperOrchestrator:
                 # Save detailed report
                 report_path = self.storage.save_detailed_report(job_entries)
                 self.logger.info(f"Detailed report saved to: {report_path}")
+                
+                # Update README with latest jobs
+                self.storage.update_readme()
+                self.logger.info("README.md updated with latest jobs table")
             
             self.logger.info("=" * 60)
             self.logger.info("Scraping Pipeline Completed Successfully")

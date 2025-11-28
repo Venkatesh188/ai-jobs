@@ -5,6 +5,7 @@ Handles data models and file I/O for job listings.
 import csv
 import json
 import os
+import re
 from dataclasses import dataclass, asdict
 from datetime import datetime
 from typing import List, Dict, Optional
@@ -140,6 +141,63 @@ class JobStorage:
                     self._write_job_markdown(f, job.to_dict())
                     
         return filepath
+
+    def update_readme(self, limit: int = 15) -> None:
+        """
+        Update README.md with the latest jobs from master CSV.
+        """
+        master_csv = os.path.join(self.output_dir, "master_jobs.csv")
+        readme_path = "README.md"
+        
+        if not os.path.exists(master_csv) or not os.path.exists(readme_path):
+            return
+            
+        try:
+            # Read master CSV
+            df = pd.read_csv(master_csv)
+            
+            # Take the last N rows and reverse them (newest first)
+            latest_jobs = df.tail(limit).iloc[::-1]
+            
+            # Create Markdown Table
+            table_lines = [
+                "| Job Title | Company | Location | Posted | Apply |",
+                "|---|---|---|---|---|"
+            ]
+            
+            for _, job in latest_jobs.iterrows():
+                title = job.get('title', 'N/A')
+                # Escape pipes in title
+                title = str(title).replace("|", "-")
+                
+                company = str(job.get('company', 'N/A')).replace("|", "-")
+                location = str(job.get('location', 'N/A')).replace("|", "-")
+                posted = str(job.get('posted_date', 'N/A')).replace("|", "-")
+                link = job.get('link', '#')
+                
+                row = f"| **{title}** | {company} | {location} | {posted} | [Apply]({link}) |"
+                table_lines.append(row)
+                
+            table_content = "\n".join(table_lines)
+            
+            # Update README
+            with open(readme_path, "r", encoding="utf-8") as f:
+                content = f.read()
+                
+            start_marker = "<!-- JOBS_TABLE_START -->"
+            end_marker = "<!-- JOBS_TABLE_END -->"
+            
+            if start_marker in content and end_marker in content:
+                pattern = f"{re.escape(start_marker)}.*?{re.escape(end_marker)}"
+                replacement = f"{start_marker}\n{table_content}\n{end_marker}"
+                
+                new_content = re.sub(pattern, replacement, content, flags=re.DOTALL)
+                
+                with open(readme_path, "w", encoding="utf-8") as f:
+                    f.write(new_content)
+                    
+        except Exception as e:
+            print(f"Error updating README: {e}")
 
     def _write_job_markdown(self, f, job):
         """Helper to write single job to markdown."""

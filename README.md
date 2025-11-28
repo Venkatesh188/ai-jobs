@@ -17,6 +17,13 @@ We understand the struggle of finding jobs that support visa sponsorship. That's
 - **Focus Domains**: AI, ML, Data Science, Research
 - **Key Sources**: LinkedIn, RemoteOK, WeWorkRemotely, and more.
 
+### 🔥 Latest AI Jobs
+<!-- JOBS_TABLE_START -->
+| Job Title | Company | Location | Posted | Apply |
+|---|---|---|---|---|
+| *Waiting for next scrape...* | | | | |
+<!-- JOBS_TABLE_END -->
+
 ## 🛠 How It Works
 
 ### The Engine
