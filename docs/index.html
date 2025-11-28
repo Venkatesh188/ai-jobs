@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Jobs Portfolio Demo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>AI Jobs Aggregator</h1>
+            <p>Engineering Portfolio Case Study</p>
+            <div class="badges">
+                <span class="badge">Python</span>
+                <span class="badge">ETL Pipeline</span>
+                <span class="badge">Web Scraping</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="controls">
+            <input type="text" id="searchInput" placeholder="Search jobs (e.g. 'Engineer', 'Remote')...">
+            <div class="stats" id="jobStats">Loading jobs...</div>
+        </div>
+
+        <div id="jobsContainer" class="jobs-grid">
+            <!-- Jobs will be inserted here -->
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>This is a static demo for a portfolio project. <a href="https://github.com/yourusername/ai-jobs">View Source on GitHub</a></p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -48,6 +48,23 @@ venv.bak/
 logs/
 *.log.*
 
+# Data
+jobs/raw/
+jobs/filtered/
+jobs/master_jobs.csv
+data/companies.json
+
+
+# Scraped Data (Exclude raw data to respect ToS and avoid repo bloat)
+jobs/*
+!jobs/.gitkeep
+!jobs/sample_data.json
+data/job_entry.py
+# Keep config files
+!data/companies.json
+!data/custom_urls.json
+!data/__init__.py
+
 # Testing
 .pytest_cache/
 .coverage
