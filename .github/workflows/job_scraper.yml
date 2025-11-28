@@ -55,7 +55,7 @@ jobs:
         if: steps.verify-changed-files.outputs.changed == 'true'
         run: |
           git add jobs/
-          git add logs/
+          git add README.md
           git commit -m "🤖 Automated job update: $(date +'%Y-%m-%d %H:%M:%S')"
           git push
 
