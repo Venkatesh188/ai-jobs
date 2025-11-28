@@ -1,58 +1,48 @@
-# Automated AI Jobs Repository
+# 🚀 AI Jobs - Visa Sponsored & Hourly Updated
 
-## 🤖 Project Overview
+## 🌍 The Ultimate Open Source Job Board for Global Talent
 
-This repository provides an automated, continuously updated collection of AI and research-related job postings. Powered by web scraping, AI filtering, and GitHub Actions, we eliminate manual job curation.
+Welcome to the **AI Jobs** repository! This is the **one and only platform** dedicated to helping job seekers find **visa-sponsored** opportunities in Artificial Intelligence, Machine Learning, and Data Science.
 
-### 🌟 Key Features
-- **Automated Hourly Scraping**: Jobs are scraped every hour from multiple sources
-- **AI-Powered Filtering**: OpenAI API classifies job relevance for AI/ML positions
-- **Comprehensive Job Listings**: Curated list of research and engineering positions
-- **Automated Repository Updates**: GitHub Actions automatically commits new jobs
+We understand the struggle of finding jobs that support visa sponsorship. That's why we've built this automated engine to curate the best opportunities for you, updated **every single hour**.
 
-## 📊 Job Listing Stats
-- **Total Jobs**: X
-- **Last Updated**: [Timestamp]
-- **Sources**: LinkedIn, Glassdoor, Indeed, Academic Job Boards
+### 🌟 Why This Repo?
+- **🛂 Visa Sponsorship Focus**: We prioritize listings that are friendly to international talent.
+- **⚡ Hourly Updates**: Our bots run 24/7 to bring you the freshest jobs before anyone else.
+- **🤖 Smart Filtering**: We filter out the noise to bring you high-quality AI/ML roles.
+- **🔓 100% Open Source**: Built by the community, for the community.
+
+## 📊 Live Job Stats
+- **Update Frequency**: Every Hour
+- **Focus Domains**: AI, ML, Data Science, Research
+- **Key Sources**: LinkedIn, RemoteOK, WeWorkRemotely, and more.
 
 ## 🛠 How It Works
 
-### Scraping Process
-1. **Web Crawling**: Use Crawl4AI to extract job listings from multiple sources
-2. **AI Filtering**: OpenAI API classifies job relevance based on:
-   - AI/ML Keywords Presence
-   - Research Orientation
-   - Technical Depth
-   - Career Stage Alignment
-3. **Data Standardization**: Normalize job information into structured format
-4. **Repository Update**: Automatically commit new jobs to repository
+### The Engine
+1. **Continuous Crawling**: Our scrapers monitor top job boards around the clock.
+2. **Smart Classification**: We analyze job descriptions to ensure they match high-quality AI/ML criteria.
+3. **Visa Check**: We look for indicators of visa sponsorship and relocation support.
+4. **Instant Publishing**: New jobs are committed to this repository immediately.
 
-### Job Filtering Criteria
-The AI classifier filters for:
-- AI/ML Research Positions
-- Data Science Roles
-- Machine Learning Engineering
-- NLP and Computer Vision Jobs
-- Academic and Industry Positions
-
-**Excluded**: Sales, Marketing, Administrative roles
-
-## 🔍 Job Categories
-- Research Scientist
-- AI Engineer
-- Machine Learning Researcher
-- Data Scientist
-- NLP Specialist
-- Computer Vision Engineer
+### Job Categories
+- 🧠 **Research Scientist**
+- 💻 **AI/ML Engineer**
+- 📊 **Data Scientist**
+- 🗣️ **NLP Specialist**
+- 👁️ **Computer Vision Engineer**
 
 ## 📝 How to Use
 
-### View Jobs
-- Browse monthly markdown files in the `jobs/` directory
-- Filter by year and month
-- Click job links to apply directly
+### Find Your Next Role
+1. Navigate to the `jobs/` directory.
+2. Open the latest report (e.g., `jobs/reports/jobs_report_YYYYMMDD.md`).
+3. Browse jobs with clear details: **Title, Company, Salary, Location, and Apply Link**.
+4. Click and apply!
 
-### Local Development
+### Run It Yourself (Local Development)
+
+Want to run the scraper locally?
 
 1. **Clone the repository**
    ```bash
@@ -60,83 +50,53 @@ The AI classifier filters for:
    cd ai-jobs
    ```
 
-2. **Set up virtual environment**
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
-   ```
-
-3. **Install dependencies**
+2. **Install dependencies**
    ```bash
    pip install -r requirements.txt
    ```
 
-4. **Configure environment variables**
-   ```bash
-   cp .env.example .env
-   # Edit .env and add your OPENAI_API_KEY
-   ```
-
-5. **Run the scraper**
+3. **Run the scraper**
    ```bash
    python main.py
    ```
 
 ## 🚀 Technology Stack
-- **Web Crawling**: Crawl4AI
-- **AI Filtering**: OpenAI API (GPT-4o-mini)
-- **CI/CD**: GitHub Actions
-- **Language**: Python 3.11+
-- **Data Storage**: CSV and Markdown
+- **Python 3.10+**
+- **Playwright & Aiohttp**: For robust and fast web scraping.
+- **Pandas**: For data processing and organization.
+- **GitHub Actions**: For CI/CD and hourly automation.
 
 ## 📁 Project Structure
 ```
 ai-jobs/
-├── crawlers/          # Web crawler implementations
-│   ├── base_crawler.py
-│   └── linkedin_crawler.py
-├── ai_filter/         # AI job classification
-│   └── job_classifier.py
-├── data/              # Data models and storage
-│   └── job_entry.py
-├── utils/             # Utility functions
-│   └── logger.py
-├── jobs/              # Output directory for job listings
-├── logs/              # Application logs
-├── config.py          # Configuration management
-├── main.py            # Main entry point
-└── requirements.txt   # Python dependencies
+├── crawlers/          # Scrapers for different job boards
+├── ai_filter/         # Logic to classify and filter relevant jobs
+├── data/              # Data models for job entries
+├── jobs/              # 📂 The Treasure Trove: Scraped job listings
+├── .github/workflows/ # CI/CD configuration for hourly runs
+└── main.py            # The brain of the operation
 ```
 
 ## 🤝 Contributing
-Interested in contributing? Check out our [CONTRIBUTING.md](CONTRIBUTING.md)
+We welcome contributions! Whether it's adding a new job source, improving the filter logic, or fixing a bug.
+Check out [CONTRIBUTING.md](CONTRIBUTING.md) to get started.
 
-### Contribution Areas
-- Add new job sources (Glassdoor, Indeed, etc.)
-- Improve AI filtering accuracy
-- Enhance data extraction
-- Optimize scraping performance
-
-## ⚖️ Ethical Considerations
-- **Respects robots.txt**: All crawlers respect website robots.txt files
-- **Rate Limiting**: Implements delays between requests
-- **Source Attribution**: All jobs include source attribution
-- **Terms of Service**: Compliant with website terms of service
+## ⚖️ Ethical Scraping
+- We respect `robots.txt` policies.
+- We implement rate limiting to be good citizens of the web.
+- All data is attributed to original sources.
 
 ## ⚠️ Disclaimer
-- Jobs are scraped from public sources
-- No guarantee of job availability
-- Always verify job details with the original source
-- This tool is for informational purposes only
+Jobs are aggregated from public sources. While we strive for accuracy, please verify details (especially visa sponsorship) on the application page.
 
 ## 📄 License
-MIT License - Free to use, modify, and distribute
+MIT License - Free to use, modify, and distribute.
 
 ## 🙏 Acknowledgements
-- Inspired by [2026-AI-College-Jobs](https://github.com/speedyapply/2026-AI-College-Jobs)
-- Community-driven open-source project
+- Built with ❤️ for the global AI community.
+- Powered by Open Source.
 
 ---
 
-**Help us improve!** ⭐ Star the repo, file issues, or contribute!
+**Find this useful?** ⭐ **Star the repo** to help others find it!
 
