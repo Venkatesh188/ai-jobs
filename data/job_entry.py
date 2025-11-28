@@ -19,6 +19,7 @@ class JobEntry:
     link: str
     posted_date: str
     source: str
+    salary: str = "Not mentioned"
     description: str = ""
     relevance_score: float = 0.0
     reasoning: str = ""
@@ -41,6 +42,7 @@ class JobEntry:
             link=data.get("link", ""),
             posted_date=data.get("posted_date", ""),
             source=data.get("source", "unknown"),
+            salary=data.get("salary", "Not mentioned"),
             description=data.get("description", ""),
             relevance_score=classification.get("relevance_score", 0.0),
             reasoning=classification.get("reasoning", ""),
@@ -83,8 +85,8 @@ class JobStorage:
         
         # Reorder columns for better readability
         columns = [
-            "title", "company", "relevance_score", "category", 
-            "location", "posted_date", "source", "link", 
+            "title", "company", "salary", "location", "posted_date", 
+            "link", "source", "relevance_score", "category", 
             "reasoning", "tags", "is_relevant"
         ]
         # Add any extra columns that might exist
@@ -141,12 +143,18 @@ class JobStorage:
 
     def _write_job_markdown(self, f, job):
         """Helper to write single job to markdown."""
-        f.write(f"### [{job['title']}]({job['link']})\n")
-        f.write(f"**Company:** {job['company']} | **Location:** {job['location']}\n")
-        f.write(f"**Score:** {job['relevance_score']} | **Source:** {job['source']}\n\n")
-        f.write(f"> {job['reasoning']}\n\n")
-        if job['tags']:
-            f.write(f"**Tags:** {', '.join(job['tags'])}\n\n")
+        # Handle both dict and JobEntry object
+        if hasattr(job, 'to_dict'):
+            job = job.to_dict()
+            
+        f.write(f"### {job['title']}\n\n")
+        f.write(f"- **Company:** {job['company']}\n")
+        f.write(f"- **Posted Date:** {job['posted_date']}\n")
+        if job.get('salary') and job['salary'] != "Not mentioned":
+            f.write(f"- **Salary:** {job['salary']}\n")
+        f.write(f"- **Location:** {job['location']}\n")
+        f.write(f"- **Application Link:** [Apply Here]({job['link']})\n")
+        f.write(f"- **Source:** {job['source']}\n\n")
         f.write("---\n\n")
 
     def save_detailed_report(self, jobs: List[JobEntry]) -> str:
