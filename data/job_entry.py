@@ -1,119 +1,39 @@
 """
-Job Entry Data Model
-Defines the structure for job listings and storage operations.
+Job Entry and Storage Management.
+Handles data models and file I/O for job listings.
 """
-import logging
-from datetime import datetime
-from typing import List, Optional, Dict
-from dataclasses import dataclass, asdict
 import csv
+import json
 import os
-
+from dataclasses import dataclass, asdict
+from datetime import datetime
+from typing import List, Dict, Optional
+import pandas as pd
 
 @dataclass
 class JobEntry:
-    """
-    Data model for a job posting entry.
-    
-    Attributes:
-        title: Job title
-        company: Company name
-        location: Job location
-        link: URL to job posting
-        posted_date: Date job was posted (ISO format)
-        source: Source of the job (e.g., 'linkedin', 'glassdoor')
-        description: Job description (optional)
-        tags: List of relevant tags
-        relevance_score: AI classification relevance score
-        category: Job category (Research, Engineering, Data Science, etc.)
-    """
+    """Data model for a single job entry."""
     title: str
     company: str
     location: str
     link: str
     posted_date: str
     source: str
-    description: Optional[str] = None
-    tags: Optional[List[str]] = None
-    relevance_score: Optional[float] = None
-    category: Optional[str] = None
+    description: str = ""
+    relevance_score: float = 0.0
+    reasoning: str = ""
+    category: str = "Other"
+    tags: List[str] = None
+    is_relevant: bool = False
     
     def __post_init__(self):
-        """Post-initialization processing."""
         if self.tags is None:
             self.tags = []
-        
-        # Generate tags if not provided
-        if not self.tags:
-            self.tags = self._generate_tags()
-    
-    def _generate_tags(self) -> List[str]:
-        """
-        Automatically generate relevant tags from job title and description.
-        
-        Returns:
-            List of tag strings
-        """
-        tags = []
-        title_lower = self.title.lower()
-        desc_lower = (self.description or "").lower()
-        
-        # Technology tags
-        tech_keywords = {
-            "machine learning": "#MachineLearning",
-            "deep learning": "#DeepLearning",
-            "nlp": "#NLP",
-            "natural language processing": "#NLP",
-            "computer vision": "#ComputerVision",
-            "ai": "#AI",
-            "artificial intelligence": "#AI",
-            "research": "#Research",
-            "data science": "#DataScience",
-            "llm": "#LLM",
-            "large language model": "#LLM",
-            "neural network": "#NeuralNetworks"
-        }
-        
-        for keyword, tag in tech_keywords.items():
-            if keyword in title_lower or keyword in desc_lower:
-                if tag not in tags:
-                    tags.append(tag)
-        
-        # Source tag
-        tags.append(f"#{self.source.capitalize()}")
-        
-        return tags
-    
-    def to_dict(self) -> Dict:
-        """Convert job entry to dictionary."""
-        return asdict(self)
-    
-    def to_markdown_row(self) -> str:
-        """
-        Convert job entry to markdown table row.
-        
-        Returns:
-            Markdown table row string
-        """
-        tags_str = " ".join(self.tags) if self.tags else ""
-        score_str = f"{self.relevance_score:.2f}" if self.relevance_score else "N/A"
-        
-        return (
-            f"| {self.title} | {self.company} | {self.location} | "
-            f"[Apply]({self.link}) | {self.posted_date} | {tags_str} | {score_str} |"
-        )
-    
+
     @classmethod
-    def from_dict(cls, data: Dict) -> "JobEntry":
-        """
-        Create JobEntry from dictionary.
-        
-        Args:
-            data: Dictionary with job data
-        
-        Returns:
-            JobEntry instance
-        """
+    def from_job_dict(cls, data: Dict) -> 'JobEntry':
+        """Create JobEntry from dictionary."""
+        classification = data.get("classification", {})
         return cls(
             title=data.get("title", ""),
             company=data.get("company", ""),
@@ -121,140 +41,114 @@ class JobEntry:
             link=data.get("link", ""),
             posted_date=data.get("posted_date", ""),
             source=data.get("source", "unknown"),
-            description=data.get("description"),
-            tags=data.get("tags", []),
-            relevance_score=data.get("relevance_score"),
-            category=data.get("category")
+            description=data.get("description", ""),
+            relevance_score=classification.get("relevance_score", 0.0),
+            reasoning=classification.get("reasoning", ""),
+            category=classification.get("category", "Other"),
+            tags=classification.get("tags", []),
+            is_relevant=classification.get("is_relevant", False)
         )
     
-    @classmethod
-    def from_job_dict(cls, job_dict: Dict) -> "JobEntry":
-        """
-        Create JobEntry from crawler job dictionary.
-        Handles classification metadata if present.
-        
-        Args:
-            job_dict: Job dictionary from crawler/classifier
-        
-        Returns:
-            JobEntry instance
-        """
-        classification = job_dict.get("classification", {})
-        
-        return cls(
-            title=job_dict.get("title", ""),
-            company=job_dict.get("company", ""),
-            location=job_dict.get("location", ""),
-            link=job_dict.get("link", ""),
-            posted_date=job_dict.get("posted_date", ""),
-            source=job_dict.get("source", "unknown"),
-            description=job_dict.get("description"),
-            tags=classification.get("tags", []),
-            relevance_score=classification.get("relevance_score"),
-            category=classification.get("category")
-        )
+    def to_dict(self) -> Dict:
+        """Convert to dictionary."""
+        return asdict(self)
 
 
 class JobStorage:
-    """
-    Handles storage of job entries in CSV and Markdown formats.
-    """
+    """Handles storage of job entries to CSV and Markdown."""
     
     def __init__(self, output_dir: str = "jobs"):
-        """
-        Initialize job storage.
-        
-        Args:
-            output_dir: Directory for storing job files
-        """
         self.output_dir = output_dir
-        self.logger = logging.getLogger(__name__)
+        self._ensure_directories()
         
-        # Create output directory
-        os.makedirs(output_dir, exist_ok=True)
-    
-    def save_jobs_csv(self, jobs: List[JobEntry], filename: Optional[str] = None) -> str:
-        """
-        Save jobs to CSV file.
-        
-        Args:
-            jobs: List of JobEntry objects
-            filename: Optional filename (default: auto-generated)
-        
-        Returns:
-            Path to saved CSV file
-        """
-        if filename is None:
+    def _ensure_directories(self):
+        """Create necessary directories."""
+        os.makedirs(self.output_dir, exist_ok=True)
+        os.makedirs(os.path.join(self.output_dir, "raw"), exist_ok=True)
+        os.makedirs(os.path.join(self.output_dir, "filtered"), exist_ok=True)
+        os.makedirs(os.path.join(self.output_dir, "reports"), exist_ok=True)
+
+    def save_jobs_csv(self, jobs: List[JobEntry], filename: str = None, folder: str = "filtered") -> str:
+        """Save jobs to CSV file."""
+        if not jobs:
+            return ""
+            
+        if not filename:
             timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
             filename = f"jobs_{timestamp}.csv"
-        
-        filepath = os.path.join(self.output_dir, filename)
-        
-        try:
-            with open(filepath, 'w', newline='', encoding='utf-8') as f:
-                if not jobs:
-                    self.logger.warning("No jobs to save")
-                    return filepath
-                
-                fieldnames = [
-                    "title", "company", "location", "link", "posted_date",
-                    "source", "tags", "relevance_score", "category"
-                ]
-                
-                writer = csv.DictWriter(f, fieldnames=fieldnames)
-                writer.writeheader()
-                
-                for job in jobs:
-                    row = job.to_dict()
-                    # Convert tags list to string
-                    row["tags"] = ", ".join(row.get("tags", []))
-                    writer.writerow(row)
             
-            self.logger.info(f"Saved {len(jobs)} jobs to CSV: {filepath}")
-            return filepath
-            
-        except Exception as e:
-            self.logger.error(f"Error saving CSV: {e}", exc_info=True)
-            raise
-    
-    def save_jobs_markdown(self, jobs: List[JobEntry], 
-                          filename: Optional[str] = None) -> str:
-        """
-        Save jobs to Markdown file with table format.
+        filepath = os.path.join(self.output_dir, folder, filename)
         
-        Args:
-            jobs: List of JobEntry objects
-            filename: Optional filename (default: auto-generated by date)
+        df = pd.DataFrame([job.to_dict() for job in jobs])
         
-        Returns:
-            Path to saved Markdown file
-        """
-        if filename is None:
-            now = datetime.now()
-            year = now.strftime("%Y")
-            month = now.strftime("%B").lower()
-            filename = f"{year}/{month}.md"
+        # Reorder columns for better readability
+        columns = [
+            "title", "company", "relevance_score", "category", 
+            "location", "posted_date", "source", "link", 
+            "reasoning", "tags", "is_relevant"
+        ]
+        # Add any extra columns that might exist
+        existing_cols = [c for c in columns if c in df.columns]
+        remaining_cols = [c for c in df.columns if c not in columns and c != "description"]
         
-        filepath = os.path.join(self.output_dir, filename)
-        os.makedirs(os.path.dirname(filepath), exist_ok=True)
+        # Save without description to keep CSV clean, or include it if needed
+        # For now, let's exclude description from main CSV to keep it lightweight
+        final_cols = existing_cols + remaining_cols
         
-        try:
-            with open(filepath, 'a', encoding='utf-8') as f:
-                # Write header if file is new
-                if os.path.getsize(filepath) == 0:
-                    f.write("# AI Jobs Listings\n\n")
-                    f.write(f"*Last Updated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}*\n\n")
-                    f.write("| Title | Company | Location | Link | Posted Date | Tags | Relevance Score |\n")
-                    f.write("|-------|---------|----------|------|--------------|------|----------------|\n")
-                
-                # Write job entries
-                for job in jobs:
-                    f.write(job.to_markdown_row() + "\n")
-            
-            self.logger.info(f"Saved {len(jobs)} jobs to Markdown: {filepath}")
-            return filepath
-            
-        except Exception as e:
-            self.logger.error(f"Error saving Markdown: {e}", exc_info=True)
-            raise
+        df[final_cols].to_csv(filepath, index=False)
+        return filepath
 
+    def save_jobs_master_csv(self, jobs: List[JobEntry]) -> str:
+        """Append jobs to master CSV."""
+        filepath = os.path.join(self.output_dir, "master_jobs.csv")
+        
+        new_df = pd.DataFrame([job.to_dict() for job in jobs])
+        
+        if os.path.exists(filepath):
+            existing_df = pd.read_csv(filepath)
+            combined_df = pd.concat([existing_df, new_df]).drop_duplicates(subset=["link"])
+        else:
+            combined_df = new_df
+            
+        combined_df.to_csv(filepath, index=False)
+        return filepath
+
+    def save_jobs_markdown(self, jobs: List[JobEntry]) -> str:
+        """Save jobs to Markdown file."""
+        if not jobs:
+            return ""
+            
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        filename = f"jobs_report_{timestamp}.md"
+        filepath = os.path.join(self.output_dir, "reports", filename)
+        
+        with open(filepath, "w", encoding="utf-8") as f:
+            f.write(f"# AI Jobs Report - {datetime.now().strftime('%Y-%m-%d')}\n\n")
+            f.write(f"Total Jobs Found: {len(jobs)}\n\n")
+            
+            # Group by category
+            df = pd.DataFrame([job.to_dict() for job in jobs])
+            if "category" in df.columns:
+                for category, group in df.groupby("category"):
+                    f.write(f"## {category} ({len(group)})\n\n")
+                    for _, job in group.iterrows():
+                        self._write_job_markdown(f, job)
+            else:
+                for job in jobs:
+                    self._write_job_markdown(f, job.to_dict())
+                    
+        return filepath
+
+    def _write_job_markdown(self, f, job):
+        """Helper to write single job to markdown."""
+        f.write(f"### [{job['title']}]({job['link']})\n")
+        f.write(f"**Company:** {job['company']} | **Location:** {job['location']}\n")
+        f.write(f"**Score:** {job['relevance_score']} | **Source:** {job['source']}\n\n")
+        f.write(f"> {job['reasoning']}\n\n")
+        if job['tags']:
+            f.write(f"**Tags:** {', '.join(job['tags'])}\n\n")
+        f.write("---\n\n")
+
+    def save_detailed_report(self, jobs: List[JobEntry]) -> str:
+        """Alias for save_jobs_markdown for now."""
+        return self.save_jobs_markdown(jobs)

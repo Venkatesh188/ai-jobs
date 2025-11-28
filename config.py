@@ -12,7 +12,7 @@ class Settings(BaseSettings):
     """Application settings loaded from environment variables."""
     
     # OpenAI Configuration
-    openai_api_key: str = Field(..., description="OpenAI API key for job filtering")
+    openai_api_key: str = Field(default=None, description="OpenAI API key for job filtering")
     
     # Crawler Configuration
     request_delay: float = Field(default=2.0, description="Delay between requests (seconds)")
@@ -20,7 +20,7 @@ class Settings(BaseSettings):
     timeout: int = Field(default=30, description="Request timeout in seconds")
     
     # Rate Limiting
-    respect_robots_txt: bool = Field(default=True, description="Whether to respect robots.txt")
+    respect_robots_txt: bool = Field(default=False, description="Whether to respect robots.txt")
     user_agent: str = Field(
         default="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
         description="User agent string for requests"
@@ -77,6 +77,21 @@ CRAWLER_SOURCES = {
         "base_url": "https://www.indeed.com/jobs",
         "enabled": False,  # Will be enabled after LinkedIn crawler is stable
         "rate_limit_delay": 2.0
+    },
+    "remoteok": {
+        "base_url": "https://remoteok.com/api",
+        "enabled": True,
+        "rate_limit_delay": 1.0
+    },
+    "weworkremotely": {
+        "base_url": "https://weworkremotely.com/categories/remote-programming-jobs.rss",
+        "enabled": True,
+        "rate_limit_delay": 1.0
+    },
+    "company_portals": {
+        "base_url": "data/companies.json",
+        "enabled": True,
+        "rate_limit_delay": 1.0
     }
 }
 

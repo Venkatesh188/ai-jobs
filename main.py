@@ -5,9 +5,13 @@ Orchestrates crawling, filtering, and storage operations.
 import asyncio
 import logging
 from typing import List
+from datetime import datetime
 
-from config import get_settings
+from config import get_settings, CRAWLER_SOURCES
 from crawlers.linkedin_crawler import LinkedInCrawler
+from crawlers.remoteok_crawler import RemoteOKCrawler
+from crawlers.weworkremotely_crawler import WeWorkRemotelyCrawler
+from crawlers.company_crawler import CompanyCrawler
 from ai_filter.job_classifier import JobClassifier
 from data.job_entry import JobEntry, JobStorage
 from utils.logger import setup_logging
@@ -37,9 +41,30 @@ class ScraperOrchestrator:
     def _setup_crawlers(self):
         """Set up available crawlers."""
         try:
-            linkedin_crawler = LinkedInCrawler()
-            self.crawlers.append(linkedin_crawler)
-            self.logger.info("LinkedIn crawler initialized")
+            # Initialize LinkedIn crawler
+            if CRAWLER_SOURCES.get("linkedin", {}).get("enabled"):
+                linkedin_crawler = LinkedInCrawler()
+                self.crawlers.append(linkedin_crawler)
+                self.logger.info("LinkedIn crawler initialized")
+            
+            # Initialize RemoteOK crawler
+            if CRAWLER_SOURCES.get("remoteok", {}).get("enabled"):
+                remoteok_crawler = RemoteOKCrawler()
+                self.crawlers.append(remoteok_crawler)
+                self.logger.info("RemoteOK crawler initialized")
+
+            # Initialize WeWorkRemotely crawler
+            if CRAWLER_SOURCES.get("weworkremotely", {}).get("enabled"):
+                wwr_crawler = WeWorkRemotelyCrawler()
+                self.crawlers.append(wwr_crawler)
+                self.logger.info("WeWorkRemotely crawler initialized")
+
+            # Initialize Company Portal crawler
+            if CRAWLER_SOURCES.get("company_portals", {}).get("enabled"):
+                company_crawler = CompanyCrawler()
+                self.crawlers.append(company_crawler)
+                self.logger.info("Company Portal crawler initialized")
+            
         except Exception as e:
             self.logger.error(f"Error setting up crawlers: {e}", exc_info=True)
     
@@ -92,9 +117,27 @@ class ScraperOrchestrator:
             
             self.logger.info(f"Total jobs retrieved: {len(all_jobs)}")
             
+            # Save raw jobs before filtering
+            self.logger.info("Saving raw jobs before filtering...")
+            try:
+                raw_job_entries = [JobEntry.from_job_dict(job) for job in all_jobs]
+                timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+                raw_csv_path = self.storage.save_jobs_csv(
+                    raw_job_entries, 
+                    filename=f"raw_jobs_{timestamp}.csv",
+                    folder="raw"
+                )
+                self.logger.info(f"Raw jobs saved to: {raw_csv_path}")
+            except Exception as e:
+                self.logger.error(f"Error saving raw jobs: {e}", exc_info=True)
+
             # Step 2: Filter jobs using AI classification
             self.logger.info("Step 2: Filtering jobs using AI classification...")
-            relevant_jobs = self.classifier.filter_jobs(all_jobs)
+            try:
+                relevant_jobs = self.classifier.filter_jobs(all_jobs)
+            except Exception as e:
+                self.logger.error(f"AI filtering failed: {e}. Proceeding with all jobs.")
+                relevant_jobs = all_jobs
             
             if not relevant_jobs:
                 self.logger.warning("No relevant jobs found after AI filtering")
@@ -115,12 +158,26 @@ class ScraperOrchestrator:
             self.logger.info("Step 4: Storing jobs...")
             
             if self.settings.csv_output:
-                csv_path = self.storage.save_jobs_csv(job_entries)
-                self.logger.info(f"Jobs saved to CSV: {csv_path}")
+                # Save individual run CSV
+                timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+                csv_path = self.storage.save_jobs_csv(
+                    job_entries,
+                    filename=f"filtered_jobs_{timestamp}.csv",
+                    folder="filtered"
+                )
+                self.logger.info(f"Jobs saved to run CSV: {csv_path}")
+                
+                # Save to master CSV (stacking jobs)
+                master_csv_path = self.storage.save_jobs_master_csv(job_entries)
+                self.logger.info(f"Jobs stacked to master CSV: {master_csv_path}")
             
             if self.settings.markdown_output:
                 md_path = self.storage.save_jobs_markdown(job_entries)
                 self.logger.info(f"Jobs saved to Markdown: {md_path}")
+                
+                # Save detailed report
+                report_path = self.storage.save_detailed_report(job_entries)
+                self.logger.info(f"Detailed report saved to: {report_path}")
             
             self.logger.info("=" * 60)
             self.logger.info("Scraping Pipeline Completed Successfully")
