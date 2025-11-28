@@ -44,6 +44,7 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
           python main.py
+          python generate_static_site.py
       
       - name: Check for changes
         id: verify-changed-files
@@ -58,6 +59,7 @@ jobs:
         if: steps.verify-changed-files.outputs.changed == 'true'
         run: |
           git add jobs/
+          git add docs/
           git add README.md
           git commit -m "🤖 Automated job update: $(date +'%Y-%m-%d %H:%M:%S')"
           git push
