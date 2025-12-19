@@ -26,21 +26,21 @@
 <!-- JOBS_TABLE_START -->
 | Job Title | Company | Location | Posted | Apply |
 |---|---|---|---|---|
-| **Software Engineer** | Udemy | Dublin, Ireland | 2025-11-28T08:00:29-05:00 | [Apply](https://app.careerpuck.com/job-board/udemy/job/5649027004?gh_jid=5649027004) |
-| **Technical Support Engineer 2** | Twilio | Remote - India | 2025-11-28T03:42:40-05:00 | [Apply](https://job-boards.greenhouse.io/twilio/jobs/7431149) |
-| **Phone Numbers Operations Specialist 2** | Twilio | Remote - India | 2025-11-28T04:25:36-05:00 | [Apply](https://job-boards.greenhouse.io/twilio/jobs/7420702) |
-| **Tax Analyst  (Indirect Tax)** | Okta | Bengaluru, India | 2025-11-28T08:53:01-05:00 | [Apply](https://www.okta.com/company/careers/opportunity/7418575?gh_jid=7418575) |
-| **Staff Software Engineer in Test** | Okta | Bengaluru, India | 2025-11-28T08:29:34-05:00 | [Apply](https://www.okta.com/company/careers/opportunity/7369387?gh_jid=7369387) |
-| **Senior Software Engineer, Java, Spring, Backend** | Okta | Bengaluru, India | 2025-11-28T01:31:22-05:00 | [Apply](https://www.okta.com/company/careers/opportunity/6879868?gh_jid=6879868) |
-| **Customer Success Manager (Mandarin Speaking)** | Stripe | Singapore | 2025-11-28T02:38:13-05:00 | [Apply](https://stripe.com/jobs/search?gh_jid=7430701) |
-| **Customer Success Manager (AUNZ)** | Stripe | Australia | 2025-11-28T01:38:40-05:00 | [Apply](https://stripe.com/jobs/search?gh_jid=7430703) |
-| **Sr. Staff Software Engineer** | Pinterest | Zurich, CH | 2025-11-28T07:39:49-05:00 | [Apply](https://www.pinterestcareers.com/jobs/?gh_jid=7158600) |
-| **Senior AirCover Specialist** | Airbnb | Gurugram, India | 2025-11-28T07:04:47-05:00 | [Apply](https://careers.airbnb.com/positions/7427910?gh_jid=7427910) |
-| **Zencastr: Senior Backend Engineer - Full Remote** | See Title/Desc | Remote | Wed, 06 Aug 2025 20:01:29 +0000 | [Apply](https://weworkremotely.com/remote-jobs/zencastr-senior-backend-engineer-full-remote) |
-| **Customer Growth Lead Americas** | Immutable | nan | 2025-11-27T11:00:02+00:00 | [Apply](https://remoteOK.com/remote-jobs/remote-customer-growth-lead-americas-immutable-1129058) |
-| **Graphic Designer Contract to Perm** | Monad Foundation | nan | 2025-11-27T11:00:19+00:00 | [Apply](https://remoteOK.com/remote-jobs/remote-graphic-designer-contract-to-perm-monad-foundation-1129060) |
-| **Workplace Operations Analyst** | Palantir | Washington, D.C. | 2022-05-13T14:59:02.567000 | [Apply](https://jobs.lever.co/palantir/885b4e3a-fc76-4818-9b45-9386e615c74b) |
-| **Web Application Developer - Defense** | Palantir | Palo Alto, CA | 2024-03-05T13:36:22.144000 | [Apply](https://jobs.lever.co/palantir/96e4295f-3af7-48e5-a2c8-74622eaf5587) |
+| **Platform Intelligence Engineer** | Palantir | New York, NY | 2025-12-15T21:11:27.652000 | [Apply](https://jobs.lever.co/palantir/a753a9e7-a361-426b-9c25-3cf2488c1730) |
+| **Neurodivergent Fellowship** | Palantir | Washington, D.C. | 2025-12-07T23:17:15.415000 | [Apply](https://jobs.lever.co/palantir/fd952b52-7b9c-4056-a3dd-0bc41fcfe603) |
+| **Neurodivergent Fellowship** | Palantir | New York, NY | 2025-12-07T22:42:55.766000 | [Apply](https://jobs.lever.co/palantir/61eaa54c-e1b7-4064-afad-f7df3d48d652) |
+| **Government Contracts Specialist** | Palantir | London, United Kingdom | 2025-12-18T19:16:44.889000 | [Apply](https://jobs.lever.co/palantir/6374282c-0330-4f98-b2a8-1afc4070f8f5) |
+| **Forward Deployed Software Engineer, Internship - US Government** | Palantir | Honolulu, HI | 2025-12-11T22:26:14.632000 | [Apply](https://jobs.lever.co/palantir/315f695d-04d1-4a9a-848e-cb2bec7a997e) |
+| **Forward Deployed Software Engineer - UK Government** | Palantir | London, United Kingdom | 2023-01-11T17:48:32.149000 | [Apply](https://jobs.lever.co/palantir/57a3f928-e7d3-4037-8196-b38e2f867152) |
+| **Forward Deployed Software Engineer** | Palantir | Stockholm, Sweden | 2021-10-19T00:03:27.848000 | [Apply](https://jobs.lever.co/palantir/d084b769-6f53-4409-afa8-c183b059b384) |
+| **Forward Deployed Software Engineer** | Palantir | Warsaw, Poland | 2021-07-20T16:34:21.851000 | [Apply](https://jobs.lever.co/palantir/bf718bd3-b2ef-451e-8033-cb4d2d9c094b) |
+| **Deployment Strategist, Internship - US Government** | Palantir | Honolulu, HI | 2025-12-11T22:31:15.446000 | [Apply](https://jobs.lever.co/palantir/a49d4181-a289-435a-b581-7f5af0497c8e) |
+| **Deployment Strategist** | Palantir | Warsaw, Poland | 2021-10-28T04:13:08.600000 | [Apply](https://jobs.lever.co/palantir/9ace479e-a9e4-4610-a553-122d3831863a) |
+| **Corporate Affairs Intern** | Palantir | New York, NY | 2025-12-10T17:45:19.438000 | [Apply](https://jobs.lever.co/palantir/ff70f5d5-7c43-4b20-9359-ff94f523d6f7) |
+| **Corporate Affairs Intern** | Palantir | Washington, D.C. | 2025-12-11T19:57:21.688000 | [Apply](https://jobs.lever.co/palantir/ebbbdf79-b9d8-4d34-afb9-d741f269df10) |
+| **Contract Manager** | Palantir | New York, NY | 2025-12-12T21:51:31.955000 | [Apply](https://jobs.lever.co/palantir/6e01a965-b6f9-414f-bb4b-b6b807938ba7) |
+| **Strategic Program Manager** | Figma | San Francisco, CA • New York, NY • United States | 2025-12-16T16:59:08-05:00 | [Apply](https://boards.greenhouse.io/figma/jobs/5737778004?gh_jid=5737778004) |
+| **Solutions Consultant (Paris, France)** | Figma | Paris, France | 2025-12-16T05:00:37-05:00 | [Apply](https://boards.greenhouse.io/figma/jobs/5735542004?gh_jid=5735542004) |
 <!-- JOBS_TABLE_END -->
 
 ## 🛠 How It Works
