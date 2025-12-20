@@ -8,9 +8,8 @@
 
 > **Note for Recruiters**: This repository is a **portfolio case study** demonstrating data engineering skills (Web Scraping, ETL, Data Normalization). It is not currently operating as a live commercial service.
 
-<<<<<<< HEAD
 ##  [Read the Technical Deep Dive (PORTFOLIO.md)](./PORTFOLIO.md)
-=======
+
 ### 🌟 Why This Repo?
 - **🛂 Visa Sponsorship Focus**: We prioritize listings that are friendly to international talent.
 - **⚡ Hourly Updates**: Our bots run 24/7 to bring you the freshest jobs before anyone else.
@@ -121,9 +120,6 @@ MIT License - Free to use, modify, and distribute.
 ## 🙏 Acknowledgements
 - Built with ❤️ for the global AI community.
 - Powered by Open Source.
->>>>>>> b5d342ad0749d61788b929ce9d20f2e08bbd724b
-
----
 
 ##  Architecture
 This project implements a modular ETL pipeline:
