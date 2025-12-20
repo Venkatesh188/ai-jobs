@@ -25,21 +25,21 @@
 <!-- JOBS_TABLE_START -->
 | Job Title | Company | Location | Posted | Apply |
 |---|---|---|---|---|
-| **Platform Intelligence Engineer** | Palantir | New York, NY | 2025-12-15T21:11:27.652000 | [Apply](https://jobs.lever.co/palantir/a753a9e7-a361-426b-9c25-3cf2488c1730) |
-| **Neurodivergent Fellowship** | Palantir | Washington, D.C. | 2025-12-07T23:17:15.415000 | [Apply](https://jobs.lever.co/palantir/fd952b52-7b9c-4056-a3dd-0bc41fcfe603) |
-| **Neurodivergent Fellowship** | Palantir | New York, NY | 2025-12-07T22:42:55.766000 | [Apply](https://jobs.lever.co/palantir/61eaa54c-e1b7-4064-afad-f7df3d48d652) |
-| **Government Contracts Specialist** | Palantir | London, United Kingdom | 2025-12-18T19:16:44.889000 | [Apply](https://jobs.lever.co/palantir/6374282c-0330-4f98-b2a8-1afc4070f8f5) |
-| **Forward Deployed Software Engineer, Internship - US Government** | Palantir | Honolulu, HI | 2025-12-11T22:26:14.632000 | [Apply](https://jobs.lever.co/palantir/315f695d-04d1-4a9a-848e-cb2bec7a997e) |
-| **Forward Deployed Software Engineer - UK Government** | Palantir | London, United Kingdom | 2023-01-11T17:48:32.149000 | [Apply](https://jobs.lever.co/palantir/57a3f928-e7d3-4037-8196-b38e2f867152) |
-| **Forward Deployed Software Engineer** | Palantir | Stockholm, Sweden | 2021-10-19T00:03:27.848000 | [Apply](https://jobs.lever.co/palantir/d084b769-6f53-4409-afa8-c183b059b384) |
-| **Forward Deployed Software Engineer** | Palantir | Warsaw, Poland | 2021-07-20T16:34:21.851000 | [Apply](https://jobs.lever.co/palantir/bf718bd3-b2ef-451e-8033-cb4d2d9c094b) |
-| **Deployment Strategist, Internship - US Government** | Palantir | Honolulu, HI | 2025-12-11T22:31:15.446000 | [Apply](https://jobs.lever.co/palantir/a49d4181-a289-435a-b581-7f5af0497c8e) |
-| **Deployment Strategist** | Palantir | Warsaw, Poland | 2021-10-28T04:13:08.600000 | [Apply](https://jobs.lever.co/palantir/9ace479e-a9e4-4610-a553-122d3831863a) |
-| **Corporate Affairs Intern** | Palantir | New York, NY | 2025-12-10T17:45:19.438000 | [Apply](https://jobs.lever.co/palantir/ff70f5d5-7c43-4b20-9359-ff94f523d6f7) |
-| **Corporate Affairs Intern** | Palantir | Washington, D.C. | 2025-12-11T19:57:21.688000 | [Apply](https://jobs.lever.co/palantir/ebbbdf79-b9d8-4d34-afb9-d741f269df10) |
-| **Contract Manager** | Palantir | New York, NY | 2025-12-12T21:51:31.955000 | [Apply](https://jobs.lever.co/palantir/6e01a965-b6f9-414f-bb4b-b6b807938ba7) |
-| **Strategic Program Manager** | Figma | San Francisco, CA • New York, NY • United States | 2025-12-16T16:59:08-05:00 | [Apply](https://boards.greenhouse.io/figma/jobs/5737778004?gh_jid=5737778004) |
-| **Solutions Consultant (Paris, France)** | Figma | Paris, France | 2025-12-16T05:00:37-05:00 | [Apply](https://boards.greenhouse.io/figma/jobs/5735542004?gh_jid=5735542004) |
+| **Field Enablement Manager (London, United Kingdom)** | Figma | London, England | 2025-12-19T16:13:40-05:00 | [Apply](https://boards.greenhouse.io/figma/jobs/5741316004?gh_jid=5741316004) |
+| **Director, Digital Customer Success** | Udemy | San Francisco, CA | 2025-12-19T16:31:42-05:00 | [Apply](https://app.careerpuck.com/job-board/udemy/job/5733307004?gh_jid=5733307004) |
+| **Director, Digital Customer Success** | Udemy | Austin, TX | 2025-12-19T16:34:30-05:00 | [Apply](https://app.careerpuck.com/job-board/udemy/job/5741851004?gh_jid=5741851004) |
+| ** Director, Digital Customer Success** | Udemy | Denver, CO | 2025-12-19T16:34:02-05:00 | [Apply](https://app.careerpuck.com/job-board/udemy/job/5741849004?gh_jid=5741849004) |
+| **Senior Investigator ** | Twilio | Remote - US | 2025-12-19T17:03:11-05:00 | [Apply](https://job-boards.greenhouse.io/twilio/jobs/7466463) |
+| **Art Director** | Twilio | Remote - US | 2025-12-19T17:03:11-05:00 | [Apply](https://job-boards.greenhouse.io/twilio/jobs/7474214) |
+| **Full Stack Software Engineer, Credit Cards and Banking** | Robinhood | Menlo Park, CA; New York, NY | 2025-12-19T17:13:13-05:00 | [Apply](https://boards.greenhouse.io/robinhood/jobs/7170008?t=gh_src=&gh_jid=7170008) |
+| **Finance & Strategy Manager** | Robinhood | Chicago, IL; Menlo Park, CA; New York, NY | 2025-12-19T16:40:27-05:00 | [Apply](https://boards.greenhouse.io/robinhood/jobs/7473331?t=gh_src=&gh_jid=7473331) |
+| **Senior Software Engineer, Android Test Engineering** | Reddit | Los Angeles, CA | 2025-12-19T17:06:43-05:00 | [Apply](https://job-boards.greenhouse.io/reddit/jobs/7488988) |
+| **Senior Software Engineer, Android Test Engineering** | Reddit | Remote - United States | 2025-12-19T17:05:57-05:00 | [Apply](https://job-boards.greenhouse.io/reddit/jobs/7488862) |
+| **Senior Software Engineer, Android Test Engineering** | Reddit | Chicago, IL | 2025-12-19T17:06:45-05:00 | [Apply](https://job-boards.greenhouse.io/reddit/jobs/7488991) |
+| **Senior Software Engineer, Android Test Engineering** | Reddit | New York City, NY | 2025-12-19T17:06:46-05:00 | [Apply](https://job-boards.greenhouse.io/reddit/jobs/7488992) |
+| **Senior Software Engineer, Android Test Engineering** | Reddit | San Francisco, CA | 2025-12-19T17:06:42-05:00 | [Apply](https://job-boards.greenhouse.io/reddit/jobs/7488986) |
+| **Engineering Manager - Ads Data Platform** | Reddit | Remote - Ontario, Canada | 2025-12-19T17:25:13-05:00 | [Apply](https://job-boards.greenhouse.io/reddit/jobs/7489117) |
+| **Peloton Expert** | Peloton | United Kingdom | 2025-12-19T15:11:26-05:00 | [Apply](https://careers.onepeloton.com/en/all-jobs/?gh_jid=7482216) |
 <!-- JOBS_TABLE_END -->
 
 ## 🛠 How It Works
