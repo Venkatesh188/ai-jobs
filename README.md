@@ -25,21 +25,21 @@
 <!-- JOBS_TABLE_START -->
 | Job Title | Company | Location | Posted | Apply |
 |---|---|---|---|---|
-| **Field Enablement Manager (London, United Kingdom)** | Figma | London, England | 2025-12-19T16:13:40-05:00 | [Apply](https://boards.greenhouse.io/figma/jobs/5741316004?gh_jid=5741316004) |
-| **Director, Digital Customer Success** | Udemy | San Francisco, CA | 2025-12-19T16:31:42-05:00 | [Apply](https://app.careerpuck.com/job-board/udemy/job/5733307004?gh_jid=5733307004) |
-| **Director, Digital Customer Success** | Udemy | Austin, TX | 2025-12-19T16:34:30-05:00 | [Apply](https://app.careerpuck.com/job-board/udemy/job/5741851004?gh_jid=5741851004) |
-| ** Director, Digital Customer Success** | Udemy | Denver, CO | 2025-12-19T16:34:02-05:00 | [Apply](https://app.careerpuck.com/job-board/udemy/job/5741849004?gh_jid=5741849004) |
-| **Senior Investigator ** | Twilio | Remote - US | 2025-12-19T17:03:11-05:00 | [Apply](https://job-boards.greenhouse.io/twilio/jobs/7466463) |
-| **Art Director** | Twilio | Remote - US | 2025-12-19T17:03:11-05:00 | [Apply](https://job-boards.greenhouse.io/twilio/jobs/7474214) |
-| **Full Stack Software Engineer, Credit Cards and Banking** | Robinhood | Menlo Park, CA; New York, NY | 2025-12-19T17:13:13-05:00 | [Apply](https://boards.greenhouse.io/robinhood/jobs/7170008?t=gh_src=&gh_jid=7170008) |
-| **Finance & Strategy Manager** | Robinhood | Chicago, IL; Menlo Park, CA; New York, NY | 2025-12-19T16:40:27-05:00 | [Apply](https://boards.greenhouse.io/robinhood/jobs/7473331?t=gh_src=&gh_jid=7473331) |
-| **Senior Software Engineer, Android Test Engineering** | Reddit | Los Angeles, CA | 2025-12-19T17:06:43-05:00 | [Apply](https://job-boards.greenhouse.io/reddit/jobs/7488988) |
-| **Senior Software Engineer, Android Test Engineering** | Reddit | Remote - United States | 2025-12-19T17:05:57-05:00 | [Apply](https://job-boards.greenhouse.io/reddit/jobs/7488862) |
-| **Senior Software Engineer, Android Test Engineering** | Reddit | Chicago, IL | 2025-12-19T17:06:45-05:00 | [Apply](https://job-boards.greenhouse.io/reddit/jobs/7488991) |
-| **Senior Software Engineer, Android Test Engineering** | Reddit | New York City, NY | 2025-12-19T17:06:46-05:00 | [Apply](https://job-boards.greenhouse.io/reddit/jobs/7488992) |
-| **Senior Software Engineer, Android Test Engineering** | Reddit | San Francisco, CA | 2025-12-19T17:06:42-05:00 | [Apply](https://job-boards.greenhouse.io/reddit/jobs/7488986) |
-| **Engineering Manager - Ads Data Platform** | Reddit | Remote - Ontario, Canada | 2025-12-19T17:25:13-05:00 | [Apply](https://job-boards.greenhouse.io/reddit/jobs/7489117) |
-| **Peloton Expert** | Peloton | United Kingdom | 2025-12-19T15:11:26-05:00 | [Apply](https://careers.onepeloton.com/en/all-jobs/?gh_jid=7482216) |
+| **Manager, Product Support - Figma Weave (London, United Kingdom or Tel Aviv, Israel) ** | Figma | Tel Aviv, Israel • London, England | 2025-12-22T11:17:47-05:00 | [Apply](https://boards.greenhouse.io/figma/jobs/5741609004?gh_jid=5741609004) |
+| **Customer Success Specialist, Pooled** | Udemy | Denver, CO | 2025-12-22T15:58:39-05:00 | [Apply](https://app.careerpuck.com/job-board/udemy/job/5740033004?gh_jid=5740033004) |
+| **Technical Support Engineer - Italian Speaking ** | Twilio | Remote - Ireland | 2025-12-22T10:30:50-05:00 | [Apply](https://job-boards.greenhouse.io/twilio/jobs/7362421) |
+| **Senior Account Executive** | Twilio | Remote - Singapore | 2025-12-22T01:57:42-05:00 | [Apply](https://job-boards.greenhouse.io/twilio/jobs/7479361) |
+| **Compliance Operations Specialist P1** | Twilio | Remote - India | 2025-12-22T10:29:42-05:00 | [Apply](https://job-boards.greenhouse.io/twilio/jobs/7365257) |
+| **Compliance Operations Specialist 1** | Twilio | Remote - India | 2025-12-22T10:28:32-05:00 | [Apply](https://job-boards.greenhouse.io/twilio/jobs/7349785) |
+| **Director and Associate General Counsel, Regulatory** | Robinhood | Menlo Park, CA; New York, NY; Washington, DC | 2025-12-22T14:59:12-05:00 | [Apply](https://boards.greenhouse.io/robinhood/jobs/7354048?t=gh_src=&gh_jid=7354048) |
+| **Manager, Program Management (Vendor Operations)** | Reddit | Remote - United States | 2025-12-22T14:11:23-05:00 | [Apply](https://job-boards.greenhouse.io/reddit/jobs/7492101) |
+| **Senior Stock Plan Administrator** | Peloton | United States | 2025-12-22T09:24:38-05:00 | [Apply](https://careers.onepeloton.com/en/all-jobs/?gh_jid=7471881) |
+| **Legal Director, Product Safety** | Peloton | Woodinville, Washington | 2025-12-22T13:02:19-05:00 | [Apply](https://careers.onepeloton.com/en/all-jobs/?gh_jid=7491937) |
+| **Software Engineer I - Product Development ** | PagerDuty | San Francisco | 2025-12-22T15:50:44-05:00 | [Apply](https://job-boards.greenhouse.io/pagerduty/jobs/5722204004) |
+| **Strategic Account Executive, Auth0** | Okta | Sydney, Australia | 2025-12-22T16:04:25-05:00 | [Apply](https://www.okta.com/company/careers/opportunity/7456897?gh_jid=7456897) |
+| **Solutions Engineer, Okta** | Okta | Georgia; New York, New York; North Carolina; Washington, DC | 2025-12-22T14:07:45-05:00 | [Apply](https://www.okta.com/company/careers/opportunity/7487711?gh_jid=7487711) |
+| **Associate Software Engineer in Test** | Okta | Chicago, Illinois; New York, New York; Washington, DC | 2025-12-22T12:58:50-05:00 | [Apply](https://www.okta.com/company/careers/opportunity/7491928?gh_jid=7491928) |
+| **Staff Product Manager, Software Supply Chain Security** | GitLab | Remote | 2025-12-22T13:47:13-05:00 | [Apply](https://job-boards.greenhouse.io/gitlab/jobs/8332463002) |
 <!-- JOBS_TABLE_END -->
 
 ## 🛠 How It Works
