@@ -25,21 +25,21 @@
 <!-- JOBS_TABLE_START -->
 | Job Title | Company | Location | Posted | Apply |
 |---|---|---|---|---|
-| **Manager, Product Support - Figma Weave (London, United Kingdom or Tel Aviv, Israel) ** | Figma | Tel Aviv, Israel • London, England | 2025-12-22T11:17:47-05:00 | [Apply](https://boards.greenhouse.io/figma/jobs/5741609004?gh_jid=5741609004) |
-| **Customer Success Specialist, Pooled** | Udemy | Denver, CO | 2025-12-22T15:58:39-05:00 | [Apply](https://app.careerpuck.com/job-board/udemy/job/5740033004?gh_jid=5740033004) |
-| **Technical Support Engineer - Italian Speaking ** | Twilio | Remote - Ireland | 2025-12-22T10:30:50-05:00 | [Apply](https://job-boards.greenhouse.io/twilio/jobs/7362421) |
-| **Senior Account Executive** | Twilio | Remote - Singapore | 2025-12-22T01:57:42-05:00 | [Apply](https://job-boards.greenhouse.io/twilio/jobs/7479361) |
-| **Compliance Operations Specialist P1** | Twilio | Remote - India | 2025-12-22T10:29:42-05:00 | [Apply](https://job-boards.greenhouse.io/twilio/jobs/7365257) |
-| **Compliance Operations Specialist 1** | Twilio | Remote - India | 2025-12-22T10:28:32-05:00 | [Apply](https://job-boards.greenhouse.io/twilio/jobs/7349785) |
-| **Director and Associate General Counsel, Regulatory** | Robinhood | Menlo Park, CA; New York, NY; Washington, DC | 2025-12-22T14:59:12-05:00 | [Apply](https://boards.greenhouse.io/robinhood/jobs/7354048?t=gh_src=&gh_jid=7354048) |
-| **Manager, Program Management (Vendor Operations)** | Reddit | Remote - United States | 2025-12-22T14:11:23-05:00 | [Apply](https://job-boards.greenhouse.io/reddit/jobs/7492101) |
-| **Senior Stock Plan Administrator** | Peloton | United States | 2025-12-22T09:24:38-05:00 | [Apply](https://careers.onepeloton.com/en/all-jobs/?gh_jid=7471881) |
-| **Legal Director, Product Safety** | Peloton | Woodinville, Washington | 2025-12-22T13:02:19-05:00 | [Apply](https://careers.onepeloton.com/en/all-jobs/?gh_jid=7491937) |
-| **Software Engineer I - Product Development ** | PagerDuty | San Francisco | 2025-12-22T15:50:44-05:00 | [Apply](https://job-boards.greenhouse.io/pagerduty/jobs/5722204004) |
-| **Strategic Account Executive, Auth0** | Okta | Sydney, Australia | 2025-12-22T16:04:25-05:00 | [Apply](https://www.okta.com/company/careers/opportunity/7456897?gh_jid=7456897) |
-| **Solutions Engineer, Okta** | Okta | Georgia; New York, New York; North Carolina; Washington, DC | 2025-12-22T14:07:45-05:00 | [Apply](https://www.okta.com/company/careers/opportunity/7487711?gh_jid=7487711) |
-| **Associate Software Engineer in Test** | Okta | Chicago, Illinois; New York, New York; Washington, DC | 2025-12-22T12:58:50-05:00 | [Apply](https://www.okta.com/company/careers/opportunity/7491928?gh_jid=7491928) |
-| **Staff Product Manager, Software Supply Chain Security** | GitLab | Remote | 2025-12-22T13:47:13-05:00 | [Apply](https://job-boards.greenhouse.io/gitlab/jobs/8332463002) |
+| **Software Engineer - Core Interfaces** | Palantir | Palo Alto, CA | 2026-01-13T21:22:02.388000 | [Apply](https://jobs.lever.co/palantir/cf76738e-3030-42fa-92ac-a9446df956fc) |
+| **Security Controller** | Palantir | London, United Kingdom | 2016-02-24T23:37:05.170000 | [Apply](https://jobs.lever.co/palantir/376064b4-c119-45b5-923d-6ebbb19ec684) |
+| **Forward Deployed Software Engineer - US Government** | Palantir | Fayetteville, NC | 2026-01-12T22:44:10.743000 | [Apply](https://jobs.lever.co/palantir/d83fac1c-353e-4b77-a586-3276b1090b6e) |
+| **Forward Deployed Software Engineer - Autonomous Systems C2** | Palantir | Palo Alto, CA | 2026-01-16T17:52:11.312000 | [Apply](https://jobs.lever.co/palantir/c62264f5-5da8-40fe-9b44-f7f0f0012e11) |
+| **Forward Deployed Software Engineer - Autonomous Systems C2** | Palantir | Seattle, WA | 2026-01-16T17:51:52.386000 | [Apply](https://jobs.lever.co/palantir/0edf7365-49f0-4263-818a-19409ec4f430) |
+| **Forward Deployed Infrastructure Engineer - US Government** | Palantir | New York, NY | 2023-09-14T01:23:51.418000 | [Apply](https://jobs.lever.co/palantir/b57f08e9-546c-4b9b-8d21-db0ebbc11363) |
+| **Financial Audit Manager** | Palantir | Palo Alto, CA | 2024-07-04T06:55:39.794000 | [Apply](https://jobs.lever.co/palantir/f77d4993-914c-436f-91ef-94f2ee757e40) |
+| **Financial Analyst - Compensation** | Palantir | New York, NY | 2019-09-24T16:42:04.588000 | [Apply](https://jobs.lever.co/palantir/c6053b88-bef1-41e7-9790-8da0d8db5290) |
+| **Financial Analyst - Compensation** | Palantir | Palo Alto, CA | 2019-05-31T17:56:55.655000 | [Apply](https://jobs.lever.co/palantir/41c2ee44-4131-4a7e-9ea4-8514e4950e33) |
+| **Executive Team Assistant** | Palantir | Miami, FL | 2026-01-06T22:03:39.442000 | [Apply](https://jobs.lever.co/palantir/38507256-ad68-41aa-a7f6-8ab478ec6374) |
+| **Deployment Strategist - US Government** | Palantir | Fayetteville, NC | 2026-01-12T22:44:40.602000 | [Apply](https://jobs.lever.co/palantir/5f39f83b-ef08-4ee8-afda-a2c77440598f) |
+| **Defensive Security Analyst** | Palantir | Washington, D.C. | 2026-01-08T11:51:58.513000 | [Apply](https://jobs.lever.co/palantir/bc803bd5-7793-452d-9ae5-9301ee24615a) |
+| **American Tech Fellowship for Veterans** | Palantir | North America | 2026-01-07T00:26:56.606000 | [Apply](https://jobs.lever.co/palantir/b88cd6e1-22b7-49d6-b215-1ca262a05728) |
+| **Web Content Strategist** | Figma | San Francisco, CA • New York, NY • United States | 2026-01-06T13:12:19-05:00 | [Apply](https://boards.greenhouse.io/figma/jobs/5736009004?gh_jid=5736009004) |
+| **Strategic Program Manager, Contingent Workforce** | Figma | San Francisco, CA • New York, NY • United States | 2026-01-07T13:46:33-05:00 | [Apply](https://boards.greenhouse.io/figma/jobs/5735636004?gh_jid=5735636004) |
 <!-- JOBS_TABLE_END -->
 
 ## 🛠 How It Works
